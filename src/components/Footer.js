@@ -22,7 +22,7 @@ function Footer() {
                         <Grid item xs={6} md={3}>
                             <Box display="flex" flexDirection={{ xs: 'column', md: 'column' }} alignItems="center" justifyContent={{ xs: 'space-between', md: 'center' }}>
                                 <Typography variant="h6" color="inherit" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
-                                    <Link href="/" color="inherit" underline="none">
+                                    <Link href="#/" color="inherit" underline="none">
                                         Armando Ruiz
                                     </Link>
                                 </Typography>
@@ -79,20 +79,20 @@ function Footer() {
                         </Grid>
                         <Grid item xs={6} md={3} sx={{ mb: { xs: 2, md: 0 } }} >
                             <Box display="flex" flexDirection={{ xs: 'column', md: 'column' }} justifyContent="space-between" alignItems="center">
-                                <Link href="/" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
+                                <Link href="#/" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
                                     {t("Inicio")}
                                 </Link>
-                                <Link href="/about-me" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
+                                <Link href="#/about-me" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
                                     {t("Sobre mi")}
                                 </Link>
                             </Box>
                         </Grid>
                         <Grid item xs={6} md={3} sx={{ mb: { xs: 2, md: 0 } }} >
                             <Box display="flex" flexDirection={{ xs: 'column', md: 'column' }} justifyContent="space-between" alignItems="center">
-                                <Link href="/my-projects" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
+                                <Link href="#/my-projects" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
                                     {t("Mis proyectos")}
                                 </Link>
-                                <Link href="/contact" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
+                                <Link href="#/contact" color="inherit" underline="none" sx={{ fontSize: { xs: '.9rem', sm: '1rem' } }}>
                                     {t("Contacto")}
                                 </Link>
                             </Box>
