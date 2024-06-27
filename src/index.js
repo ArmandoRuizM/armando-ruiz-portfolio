@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
-import './assets/languages/i18n';
+import './assets/i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

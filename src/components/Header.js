@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -100,11 +100,20 @@ function Header() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page.path} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <NavLink
+                                            to={page.path}
+                                            style={({ isActive }) => ({
+                                                textDecoration: isActive ? 'underline' : 'none',
+                                                textDecorationColor: isActive ? 'primary.main' : 'inherit',
+                                                color: isActive ? 'primary.main' : 'inherit',
+                                                fontWeight: isActive ? 'bold' : 'normal'
+                                            })}
+                                        >
                                             {t(page.name)}
-                                        </Link></Typography>
+                                        </NavLink>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -131,13 +140,21 @@ function Header() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.path}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'inherit', display: 'block', fontSize: '1rem' }}
                             >
-                                <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <NavLink
+                                    to={page.path}
+                                    style={({ isActive }) => ({
+                                        textDecoration: isActive ? 'underline' : 'none',
+                                        textDecorationColor: isActive ? 'primary.main' : 'inherit',
+                                        color: isActive ? 'primary.main' : 'inherit',
+                                        fontWeight: isActive ? 'bold' : 'normal'
+                                    })}
+                                >
                                     {t(page.name)}
-                                </Link>
+                                </NavLink>
                             </Button>
                         ))}
                     </Box>

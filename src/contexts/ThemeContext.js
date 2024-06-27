@@ -6,11 +6,22 @@ import { lightTheme, darkTheme } from '../assets/themes.js';
 export const ThemeContext = React.createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
 
   const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
+    setDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem('theme', JSON.stringify(newMode));
+      return newMode;
+    });
   };
+
+  React.useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const theme = React.useMemo(() => (darkMode ? darkTheme : lightTheme), [darkMode]);
 

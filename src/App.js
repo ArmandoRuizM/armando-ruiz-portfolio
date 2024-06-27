@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Contact from './pages/Contact';
 import MyProjects from './pages/MyProjects';
+import NotFound from './pages/NotFound';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                         <Route path="/about-me" element={<AboutMe />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/my-projects" element={<MyProjects />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
                 <Footer />
